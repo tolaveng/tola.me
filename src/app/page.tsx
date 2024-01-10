@@ -6,6 +6,7 @@ import HeaderHero from "./components/header-hero";
 import { Playpen_Sans } from 'next/font/google'
 import Head from "next/head";
 import Script from "next/script";
+import BlogPage from "./blog/page";
 
 
 const titleFont = Playpen_Sans({ weight: '400', subsets: ['latin'], display: 'swap' })
@@ -18,6 +19,7 @@ export default function HomePage() {
         <div className={styles.headerHero}>
           <HeaderHero />
         </div>
+        
         <div className={`${styles.headerWrapper} ${titleFont.className}`}>
           <div className={styles.headerProfileImage}>
             <img src="/images/profile.jpg" alt="Profile Image" style={{maxHeight: 200, maxWidth: 200}} />
@@ -33,14 +35,21 @@ export default function HomePage() {
                 <li data-in-effect="rotateIn" data-out-effect="flipOutY" data-out-shuffle="true">I build Web and Mobile apps</li>
                 <li data-in-effect="bounceIn" data-out-effect="rotateOutDownLeft" data-out-shuffle="true">.Net, C#, Blazor App, API, MVC </li>
                 <li data-in-effect="rotateInUpRight" data-out-effect="shake" data-out-shuffle="true">ReactJs, React Native, Android & IOS</li>
-                <li data-in-effect="fadeIn" data-out-effect="bounceOut" data-out-shuffle="true">Cloud Azure, Aws & MongoAtlas</li>
+                <li data-in-effect="fadeIn" data-out-effect="bounceOut" data-out-shuffle="true">Azure, Aws & MongoAtlas</li>
               </ul>
             </div>
           </div>
         </div>
+
+        <div className={styles.animateDownArrow}>
+          <div>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
       </div>
       <div className="">
-        Loading...
       </div>
     </main>
   )
