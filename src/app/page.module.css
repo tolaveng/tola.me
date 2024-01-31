@@ -1,11 +1,32 @@
-.headerBg {
+.homeContainer {
   width: 100vw;
   height: 100vh;
   margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 100px;
+}
+
+.headerContainer {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: relative;
+  perspective: 200px;
+}
+
+.headerBackground {
   background-image: url('/images/header-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
 }
 
 .headerHero {
@@ -16,10 +37,11 @@
   bottom: 0;
   margin: 0;
   padding: 0;
-  z-index: 0;
+  z-index: 1;
+  transform: translateZ(-100px) scale(1.5);
 }
 
-.headerWrapper {
+.headerProfileSection {
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -31,6 +53,104 @@
   top: 0;
   bottom: 0;
   gap: 16px;
+  transform: translateZ(-50px) scale(1.5);
+}
+
+
+.headerIcons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+}
+
+.headerIcons > img {
+  height: 64px;
+  position: absolute;
+  opacity: 0.5;
+  width: auto;
+}
+
+/* react */
+.headerIcons img:nth-child(1) {
+  top: 10%;
+  left: 20%;
+  transform: translatey(0px);
+  animation: iconFloating1 8s ease-in-out infinite;
+}
+/* grpahql */
+.headerIcons img:nth-child(2) {
+  top: 30%;
+  left: 25%;
+  transform: translatey(-15px);
+  animation: iconFloating2 15s ease-in-out infinite;
+}
+/* android */
+.headerIcons img:nth-child(3) {
+  top: 50%;
+  left: 18%;
+  transform: translatey(-10px);
+  animation: iconFloating3 10s ease-in-out infinite;
+}
+/* .net */
+.headerIcons img:nth-child(4) {
+  top: 20%;
+  left: 45%;
+  transform: translatey(10px);
+  animation: iconFloating4 15s ease-in-out infinite;
+}
+/* .blazore */
+.headerIcons img:nth-child(5) {
+  top: 12%;
+  left: 70%;
+  transform: translatey(0px);
+  animation: iconFloating1 8s ease-in-out infinite;
+}
+/* .c# */
+.headerIcons img:nth-child(6) {
+  top: 40%;
+  left: 72%;
+  transform: translatey(-15px);
+  animation: iconFloating2 15s ease-in-out infinite;
+}
+/* ts */
+.headerIcons img:nth-child(7) {
+  top: 60%;
+  left: 65%;
+  transform: translatey(-10px);
+  animation: iconFloating3 10s ease-in-out infinite;
+}
+/* azure */
+.headerIcons img:nth-child(8) {
+  top: 70%;
+  left: 30%;
+  transform: translatey(-10px);
+  animation: iconFloating3 8s ease-in-out infinite;
+}
+/* aws */
+.headerIcons img:nth-child(9) {
+  top: 70%;
+  left: 80%;
+  transform: translatey(-10px);
+  animation: iconFloating2 15s ease-in-out infinite;
+}
+/* mongo */
+.headerIcons img:nth-child(10) {
+  top: 25%;
+  left: 80%;
+  transform: translatey(-10px);
+  animation: iconFloating4 15s ease-in-out infinite;
+}
+/* swift */
+.headerIcons img:nth-child(11) {
+  top: 20%;
+  left: 10%;
+  transform: translatey(-10px);
+  animation: iconFloating1 7s ease-in infinite;
 }
 
 .headerProfileImage {
@@ -60,10 +180,14 @@
   min-height: 2rem;
 }
 
+.blogPosts {
+  min-height: 100vh;
+}
+
 /* Animate Arrow Down */
 .animateDownArrow {
   position: absolute;
-  bottom: 100px;
+  bottom: 60px;
   left: 0;
   right: 0;
   display: flex;
@@ -71,6 +195,7 @@
   justify-content: center;
   align-items: center;
   height: 100px;
+  transform: translateZ(-10px) scale(1.1);
 }
 
 .animateDownArrow > div {
@@ -111,6 +236,72 @@
 }
 /* End Animate Arrow Down */
 
+/* Animate icon floating */
+@keyframes iconFloating1 {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+@keyframes iconFloating2 {
+  0% {
+    transform: translatey(0px);
+  }
+  25% {
+    transform: translatey(-10px);
+  }
+  50% {
+    transform: translatey(-25px);
+  }
+  75% {
+    transform: translatey(-10px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+@keyframes iconFloating3 {
+  0% {
+    transform: translatey(0px);
+  }
+  25% {
+    transform: translatey(-10px);
+  }
+  50% {
+    transform: translatey(-30px);
+  }
+  75% {
+    transform: translatey(-15px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+@keyframes iconFloating4 {
+  0% {
+    transform: translatey(0px);
+  }
+  25% {
+    transform: translatey(15px);
+  }
+  50% {
+    transform: translatey(0px);
+  }
+  75% {
+    transform: translatey(10px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+/* End Animate icon floating */
+
+
 /* Responsive */
 @media only screen and (max-width: 720px) {
   .headerProfileImage {
@@ -120,5 +311,10 @@
 
   .headerProfileImage, .headerProfileImage > img {
     width: 120px;
+  }
+
+  .headerIcons > img {
+    height: 48px;
+    width: auto;
   }
 }

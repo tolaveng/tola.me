@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300&display=swap');
 
 :root {
-  
+  box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: dark) {
