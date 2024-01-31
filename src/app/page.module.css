@@ -194,12 +194,13 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 100px;
-  transform: translateZ(-10px) scale(1.1);
 }
 
 .animateDownArrow > div {
   position: absolute;
+  height: 100px;
+  cursor: pointer;
+  z-index: 100;
 }
 
 .animateDownArrow span {

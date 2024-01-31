@@ -1,12 +1,18 @@
+'use client';
 import styles from "./page.module.css";
 import HeaderHero from "./components/header-hero";
 import { Playpen_Sans } from 'next/font/google'
 import BlogPosts from "./blog/blog-posts";
 import Image from "next/image";
+import { useCallback, useRef } from "react";
 
 const titleFont = Playpen_Sans({ weight: '400', subsets: ['latin'], display: 'swap' })
 
 export default function HomePage() {
+  const bodyRef = useRef<HTMLDivElement>(null);
+  const scrollToBody = useCallback(() => {
+    bodyRef?.current?.scrollIntoView({ behavior: 'smooth' });
+  }, []);
 
   return (
     <main className={styles.homeContainer}>
@@ -53,7 +59,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className={styles.animateDownArrow}>
+      <div className={styles.animateDownArrow} onClick={scrollToBody}>
         <div>
           <span></span>
           <span></span>
@@ -61,7 +67,7 @@ export default function HomePage() {
         </div>
       </div>
       
-      <div className={styles.blogPosts}>
+      <div ref={bodyRef} className={styles.blogPosts}>
         <BlogPosts />
       </div>
     </main>
