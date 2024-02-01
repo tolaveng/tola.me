@@ -4,29 +4,24 @@
   margin: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  perspective: 100px;
+  perspective: 1px;
 }
 
 .headerContainer {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  position: relative;
-  perspective: 200px;
+  width: 100vw;
+  height: 100vh;
+  transform-style: preserve-3d;
+  transform: translateZ(-1px) scale(2);
 }
 
 .headerBackground {
   background-image: url('/images/header-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  z-index: -1;
 }
 
 .headerHero {
@@ -37,8 +32,6 @@
   bottom: 0;
   margin: 0;
   padding: 0;
-  z-index: 1;
-  transform: translateZ(-100px) scale(1.5);
 }
 
 .headerProfileSection {
@@ -53,7 +46,6 @@
   top: 0;
   bottom: 0;
   gap: 16px;
-  transform: translateZ(-50px) scale(1.5);
 }
 
 
@@ -65,11 +57,11 @@
   bottom: 0;
   margin: 0;
   padding: 0;
-  z-index: 0;
+  z-index: 1;
 }
 
 .headerIcons > img {
-  height: 64px;
+  height: 48px;
   position: absolute;
   opacity: 0.5;
   width: auto;
@@ -98,16 +90,16 @@
 }
 /* .net */
 .headerIcons img:nth-child(4) {
-  top: 20%;
+  top: 10%;
   left: 45%;
-  transform: translatey(10px);
+  transform: translatey(-15px);
   animation: iconFloating4 15s ease-in-out infinite;
 }
 /* .blazore */
 .headerIcons img:nth-child(5) {
   top: 12%;
   left: 70%;
-  transform: translatey(0px);
+  transform: translatey(10px);
   animation: iconFloating1 8s ease-in-out infinite;
 }
 /* .c# */
@@ -154,8 +146,8 @@
 }
 
 .headerProfileImage {
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   border: 1px solid #fff;
   border-radius: 50%;
   overflow: hidden;
@@ -170,7 +162,7 @@
 }
 
 .headerProfileImage > img {
-  width: 160px;
+  width: 140px;
   height: auto;
 }
 
@@ -180,24 +172,26 @@
   min-height: 2rem;
 }
 
-.blogPosts {
+.bodySection {
+  position: relative;
+  background: #272a56;
   min-height: 100vh;
 }
 
 /* Animate Arrow Down */
 .animateDownArrow {
-  position: absolute;
-  bottom: 60px;
-  left: 0;
-  right: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
 }
 
 .animateDownArrow > div {
-  position: absolute;
   height: 100px;
   cursor: pointer;
   z-index: 100;
@@ -315,7 +309,7 @@
   }
 
   .headerIcons > img {
-    height: 48px;
+    height: 32px;
     width: auto;
   }
 }
