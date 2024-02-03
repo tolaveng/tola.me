@@ -4,14 +4,36 @@ import HeaderHero from "./components/header-hero";
 import { Playpen_Sans } from 'next/font/google'
 import BlogPosts from "./blog/blog-posts";
 import Image from "next/image";
-import { useCallback, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const titleFont = Playpen_Sans({ weight: '400', subsets: ['latin'], display: 'swap' })
 
 export default function HomePage() {
   const bodyRef = useRef<HTMLDivElement>(null);
+  const arrowRef = useRef<HTMLDivElement>(null);
+
   const scrollToBody = useCallback(() => {
     bodyRef?.current?.scrollIntoView({ behavior: 'smooth' });
+  }, []);
+
+  const [isBodySectionVisible, setBodySectionVisible] = useState(false);
+
+  // observe when the body section visible
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries && entries[0]) {
+        setBodySectionVisible(entries[0].isIntersecting);
+      }
+    }, {
+      root: null,
+      rootMargin: "-100px",
+      threshold: 0,
+    });
+    if (bodyRef.current) {
+      observer.observe(bodyRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -45,14 +67,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-
-        <div className={styles.animateDownArrow} onClick={scrollToBody}>
-          <div>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
       </div>
 
       <div className={styles.headerIcons}>
@@ -68,6 +82,14 @@ export default function HomePage() {
         <Image src="/icons/mongo.png" alt="" height="64" width="64"/>
         <Image src="/icons/swift.png" alt="" height="64" width="64"/>
       </div>
+
+      <div ref={arrowRef} className={styles.animateDownArrow} style={{display: isBodySectionVisible ? 'none': 'flex'}} >
+          <div onClick={scrollToBody}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
       
       <div ref={bodyRef} className={styles.bodySection}>
         <BlogPosts />
