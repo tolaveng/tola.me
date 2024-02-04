@@ -2,10 +2,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Head from 'next/head'
-import Script from 'next/script'
-import Link from 'next/link'
 import '../../public/textillate/animate.css';
+import Script from 'next/script';
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,12 +25,16 @@ export default function RootLayout({
       {/*Use import above <Head>
         <link rel="stylesheet" href="/textillate/styles.css" />
       </Head> */}
+
+      <head>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" />
+      </head>
       
-      <Script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" />
-      <Script src="/textillate/jquery.fittext.js" />
-      <Script src="/textillate/jquery.lettering.js" />
-      <Script src="/textillate/jquery.textillate.js" />
-      <Script src="/script.js" />
+      {/* <Script type="text/javascript" src="/js/jquery-3.7.1.slim.min.js" async={false} /> */}
+      <Script type="text/javascript" src="/textillate/jquery.fittext.js" async={false} />
+      <Script type="text/javascript" src="/textillate/jquery.lettering.js" async={false} />
+      <Script type="text/javascript" src="/textillate/jquery.textillate.js" async={false} />
+      <Script type="text/javascript" src="/js/script.js" />
 
       <body className={inter.className}>
           {children}
