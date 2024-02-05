@@ -40,7 +40,7 @@ export default function BlogPosts () {
     setPageNum(n);
     setLoading(true);
     fetchData(n).finally(() => setLoading(false));
-  }, [fetchData, loading, pageNum]);
+  }, [fetchData, hasNext, loading, pageNum]);
 
   // observe when the load more section visible
   useEffect(() => {
@@ -65,6 +65,9 @@ export default function BlogPosts () {
 
   return (
     <>
+      { loading && <div className='flex justify-center items-center mt-3 mb-3 py-3'>
+        <Spinner text='Loading...'/> </div>
+      }
       { postItems }
       <div ref={loadMoreRef} className='flex justify-center items-center mt-3 mb-3 py-3'>
         { hasNext && <Spinner text='Loading...'/> }

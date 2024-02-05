@@ -29,6 +29,9 @@
   background-color: #cccccc;
   min-width: 200px;
   min-height: 100px;
+  transition: transform 1s ease-in-out, opacity 1s;
+  transform: translateX(-150%);
+  opacity: 0;
 }
 
 .blogItemImage > img {
@@ -38,10 +41,18 @@
 
 .blogItemContent {
   margin-bottom: 16px;
+  transition: opacity 1s ease-in-out 0.5s;
+  transform: translateX(150%);
+  opacity: 0;
 }
 
 .blogItemTitle {
   box-shadow: 0 4px 4px -6px #cccccc;
+}
+
+.slideIn {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
 }
 
 /* medium or larger */
