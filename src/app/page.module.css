@@ -174,8 +174,9 @@
 
 .bodySection {
   position: relative;
-  background: #272a56;
   min-height: 100vh;
+  color: #fff;
+  background: rgb(48,74,96,1);
 }
 
 /* Animate Arrow Down */

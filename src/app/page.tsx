@@ -94,6 +94,10 @@ export default function HomePage() {
       <div ref={bodyRef} className={styles.bodySection}>
         <BlogPosts />
       </div>
+
+      <div>
+        Footer
+      </div>
     </main>
   )
 }
