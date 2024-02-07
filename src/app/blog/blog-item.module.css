@@ -34,6 +34,14 @@
   opacity: 0;
 }
 
+.blogItemImageDistorted {
+  transform: scale(0.2) rotateZ(-30deg);
+}
+
+.blogItemImageSkew {
+  transform: scale(0.5) skew(20deg, 20deg);
+}
+
 .blogItemImage > img {
   width: 100%;
   height: auto;
