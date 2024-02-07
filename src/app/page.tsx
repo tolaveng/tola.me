@@ -70,7 +70,18 @@ export default function HomePage() {
       </div>
 
       <div className={styles.headerIcons}>
-        <Image src="/icons/react.png" alt="" height="64" width="64"/>
+        <span className={`${styles.headerIcon} ${styles.iconAndroid}`} />
+        <span className={`${styles.headerIcon} ${styles.iconAws}`} />
+        <span className={`${styles.headerIcon} ${styles.iconAzure}`} />
+        <span className={`${styles.headerIcon} ${styles.iconBlazor}`} />
+        <span className={`${styles.headerIcon} ${styles.iconCSharp}`} />
+        <span className={`${styles.headerIcon} ${styles.iconGraphql}`} />
+        <span className={`${styles.headerIcon} ${styles.iconMongo}`} />
+        <span className={`${styles.headerIcon} ${styles.iconDotNet}`} />
+        <span className={`${styles.headerIcon} ${styles.iconReact}`} />
+        <span className={`${styles.headerIcon} ${styles.iconSwift}`} />
+        <span className={`${styles.headerIcon} ${styles.iconTypescript}`} />
+        {/* <Image src="/icons/react.png" alt="" height="64" width="64"/>
         <Image src="/icons/graphql.png" alt="" height="64" width="64"/>
         <Image src="/icons/android.png" alt="" height="64" width="64"/>
         <Image src="/icons/net-core.png" alt="" height="64" width="64"/>
@@ -80,7 +91,7 @@ export default function HomePage() {
         <Image src="/icons/azure.png" alt="" height="64" width="64"/>
         <Image src="/icons/aws.png" alt="" height="64" width="64"/>
         <Image src="/icons/mongo.png" alt="" height="64" width="64"/>
-        <Image src="/icons/swift.png" alt="" height="64" width="64"/>
+        <Image src="/icons/swift.png" alt="" height="64" width="64"/> */}
       </div>
 
       <div ref={arrowRef} className={styles.animateDownArrow} style={{display: isBodySectionVisible ? 'none': 'flex'}} >

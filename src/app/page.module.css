@@ -60,90 +60,105 @@
   z-index: 1;
 }
 
-.headerIcons > img {
+.headerIcon {
+  background: url('/icons/logo-icons.png') no-repeat;
+  background-size: cover;
+  display: block;
+  width: 48px;
   height: 48px;
   position: absolute;
   opacity: 0.5;
-  width: auto;
 }
 
-/* react */
-.headerIcons img:nth-child(1) {
-  top: 10%;
-  left: 20%;
-  transform: translatey(0px);
-  animation: iconFloating1 8s ease-in-out infinite;
-}
-/* grpahql */
-.headerIcons img:nth-child(2) {
-  top: 30%;
-  left: 25%;
-  transform: translatey(-15px);
-  animation: iconFloating2 15s ease-in-out infinite;
-}
-/* android */
-.headerIcons img:nth-child(3) {
+.headerIcon.iconAndroid {
+  background-position: 0px 0px;
   top: 50%;
-  left: 18%;
+  left: 10%;
   transform: translatey(-10px);
   animation: iconFloating3 10s ease-in-out infinite;
 }
-/* .net */
-.headerIcons img:nth-child(4) {
-  top: 10%;
-  left: 45%;
-  transform: translatey(-15px);
-  animation: iconFloating4 15s ease-in-out infinite;
-}
-/* .blazore */
-.headerIcons img:nth-child(5) {
-  top: 12%;
-  left: 70%;
-  transform: translatey(10px);
-  animation: iconFloating1 8s ease-in-out infinite;
-}
-/* .c# */
-.headerIcons img:nth-child(6) {
-  top: 40%;
-  left: 72%;
-  transform: translatey(-15px);
+
+.headerIcon.iconAws {
+  background-position: -48px 0px;
+  top: 70%;
+  left: 85%;
+  transform: translatey(-10px);
   animation: iconFloating2 15s ease-in-out infinite;
 }
-/* ts */
-.headerIcons img:nth-child(7) {
-  top: 60%;
-  left: 65%;
-  transform: translatey(-10px);
-  animation: iconFloating3 10s ease-in-out infinite;
-}
-/* azure */
-.headerIcons img:nth-child(8) {
+
+.headerIcon.iconAzure {
+  background-position: -96px 0px;
   top: 70%;
-  left: 30%;
+  left: 20%;
   transform: translatey(-10px);
   animation: iconFloating3 8s ease-in-out infinite;
 }
-/* aws */
-.headerIcons img:nth-child(9) {
-  top: 70%;
+
+.headerIcon.iconBlazor {
+  background-position: -144px 0px;
+  top: 12%;
   left: 80%;
-  transform: translatey(-10px);
+  transform: translatey(10px);
+  animation: iconFloating1 8s ease-in-out infinite;
+}
+
+.headerIcon.iconCSharp {
+  background-position: -192px 0px;
+  top: 40%;
+  left: 80%;
+  transform: translatey(-15px);
   animation: iconFloating2 15s ease-in-out infinite;
 }
-/* mongo */
-.headerIcons img:nth-child(10) {
-  top: 25%;
-  left: 80%;
-  transform: translatey(-10px);
+
+.headerIcon.iconGraphql {
+  background-position: -240px 0px;
+  top: 10%;
+  left: 35%;
+  transform: translatey(-15px);
   animation: iconFloating4 15s ease-in-out infinite;
 }
-/* swift */
-.headerIcons img:nth-child(11) {
-  top: 20%;
-  left: 10%;
-  transform: translatey(-10px);
-  animation: iconFloating1 7s ease-in infinite;
+
+.headerIcon.iconMongo {
+  background-position: -288px 0px;
+  top: 65%;
+  left: 5%;
+  transform: translatey(-15px);
+  animation: iconFloating2 15s ease-in-out infinite;
 }
+
+.headerIcon.iconDotNet {
+  background-position: -336px 0px;
+  top: 10%;
+  left: 10%;
+  transform: translatey(0px);
+  animation: iconFloating1 8s ease-in-out infinite;
+}
+
+.headerIcon.iconReact {
+  background-position: -384px 0px;
+  top: 30%;
+  left: 15%;
+  transform: translatey(-15px);
+  animation: iconFloating2 15s ease-in-out infinite;
+}
+
+.headerIcon.iconSwift {
+  background-position: -432px 0px;
+  top: 20%;
+  left: 70%;
+  transform: translatey(-15px);
+  animation: iconFloating4 15s ease-in-out infinite;
+}
+
+.headerIcon.iconTypescript {
+  background-position: -480px 0px;
+  top: 60%;
+  left: 75%;
+  transform: translatey(-10px);
+  animation: iconFloating3 10s ease-in-out infinite;
+}
+
+
 
 .headerProfileImage {
   width: 140px;
@@ -310,8 +325,7 @@
     width: 120px;
   }
 
-  .headerIcons > img {
-    height: 32px;
-    width: auto;
+  .headerIcons {
+    transform: scale(0.8);
   }
 }
