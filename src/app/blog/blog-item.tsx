@@ -3,23 +3,24 @@ import styles from './blog-item.module.css'
 import { htmlDecode } from '@/utils/html';
 import { dateFormt } from '@/utils/utils';
 import Spinner from '../components/spinner';
+import ImageHolder from '../components/image-holder';
 
 export default function PostItem ({ post, index } : {post: Post, index: number}) {
   const blogSectionRef = useRef<HTMLDivElement>(null);
-  const [isTitleVisible, setTitleVisible] = useState(false);
+  const [isBlogVisible, setBlogVisible] = useState(false);
   const [isImageLoaded, setImageLoaded] = useState(false);
 
   // slide in if title visible
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
-      if (isTitleVisible) return;
-      setTitleVisible(entry.isIntersecting);
+      if (isBlogVisible) return;
+      setBlogVisible(entry.isIntersecting);
     });
     if (blogSectionRef.current) {
       observer.observe(blogSectionRef.current);
     }
     return () => observer.disconnect();
-  }, [isTitleVisible])
+  }, [isBlogVisible])
   
   let className = styles.blogItemContainer;
   if (index % 2 != 0) {
@@ -27,14 +28,19 @@ export default function PostItem ({ post, index } : {post: Post, index: number})
   }
 
   // image effect
-  let imageClassName = styles.blogItemImage;
+  let imgClassName = styles.blogItemImage;
   if (index % 3 === 0) {
-    imageClassName = `${styles.blogItemImage} ${styles.blogItemImageDistorted}`;
+    imgClassName = `${styles.blogItemImage} ${styles.blogItemImageDistorted}`;
   } else if (index % 3 === 1) {
-    imageClassName = `${styles.blogItemImage} ${styles.blogItemImageSkew}`;
+    imgClassName = `${styles.blogItemImage} ${styles.blogItemImageSkew}`;
   }
-  imageClassName = imageClassName + " " + (isTitleVisible && isImageLoaded ? styles.slideIn : '');
+  const [imageClassName, setImageClassName] = useState(imgClassName);
 
+  const onImageLoad = () => {
+    setImageLoaded(true);
+    setImageClassName(prev => prev + " " + styles.slideIn);
+  };
+  
   return (
     <div className={className}>
       <div className={styles.blogItemTitle}>
@@ -43,15 +49,18 @@ export default function PostItem ({ post, index } : {post: Post, index: number})
       <div className={styles.blogItemSection} ref={blogSectionRef}>
         {post.featureImageUrl && (
           <div className={styles.blogItemSectionLeft}>
-            <div className={imageClassName} style={{display: isImageLoaded ? 'block' : 'none'}}>
-              <img src={post.featureImageUrl} onLoad={() => setImageLoaded(true)} />
-            </div>
-            {!isImageLoaded && <Spinner/>}
+            {// lazy load image when blog visible
+            isBlogVisible && (
+              <div className={styles.blogItemImageContainer}>
+                {!isImageLoaded && <ImageHolder/>}
+                <img src={post.featureImageUrl} onLoad={onImageLoad} className={imageClassName}/>
+              </div>
+            )}
           </div>
         )}
 
         <div className={styles.blogItemSectionLeft}>
-          <div className={`${styles.blogItemContent} ${isTitleVisible ? styles.slideIn : ''}`}>
+          <div className={`${styles.blogItemContent} ${isBlogVisible ? styles.slideIn : ''}`}>
             <div>
               { htmlDecode(post.summary)}
             </div>

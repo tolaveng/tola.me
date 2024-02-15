@@ -81,17 +81,6 @@ export default function HomePage() {
         <span className={`${styles.headerIcon} ${styles.iconReact}`} />
         <span className={`${styles.headerIcon} ${styles.iconSwift}`} />
         <span className={`${styles.headerIcon} ${styles.iconTypescript}`} />
-        {/* <Image src="/icons/react.png" alt="" height="64" width="64"/>
-        <Image src="/icons/graphql.png" alt="" height="64" width="64"/>
-        <Image src="/icons/android.png" alt="" height="64" width="64"/>
-        <Image src="/icons/net-core.png" alt="" height="64" width="64"/>
-        <Image src="/icons/blazor.png" alt="" height="64" width="64"/>
-        <Image src="/icons/c-sharp.png" alt="" height="64" width="64"/>
-        <Image src="/icons/ts.png" alt="" height="64" width="64"/>
-        <Image src="/icons/azure.png" alt="" height="64" width="64"/>
-        <Image src="/icons/aws.png" alt="" height="64" width="64"/>
-        <Image src="/icons/mongo.png" alt="" height="64" width="64"/>
-        <Image src="/icons/swift.png" alt="" height="64" width="64"/> */}
       </div>
 
       <div ref={arrowRef} className={styles.animateDownArrow} style={{display: isBodySectionVisible ? 'none': 'flex'}} >

@@ -8,7 +8,7 @@ import Spinner from '../components/spinner';
 export default function BlogPosts () {
   const [pageNum, setPageNum] = useState(1);
   const [posts, setPosts] = useState<Post[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [hasNext, setHasNext] = useState(false);
   const initialized = useRef(false)
   const loadMoreRef = useRef<HTMLDivElement>(null);
