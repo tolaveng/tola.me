@@ -28,6 +28,8 @@ export default function HeaderHero() {
   if (!init) return <></>;
 
   return (
-    <Particles id="headerHero" options={particleNasa} className={styles.headerHero} />
+    <div className={styles.headerHeroBackground}>
+      <Particles id="headerHero" options={particleNasa} className={styles.headerHero} />
+    </div>
   );
 }

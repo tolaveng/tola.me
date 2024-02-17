@@ -7,6 +7,7 @@
 
 :root {
   box-sizing: border-box;
+  --backgroundColor: rgb(48,74,96,1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,9 +23,6 @@
 
 html,
 body {
-  height: 100vh;
-  width: 100vw;
-  overflow-x: hidden;
 }
 
 a {

@@ -1,27 +1,22 @@
 .homeContainer {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.headerContainerFixed {
   width: 100vw;
   height: 100vh;
-  margin: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  perspective: 1px;
+  position: fixed;
+  z-index: -1;
 }
 
 .headerContainer {
-  width: 100vw;
   height: 100vh;
-  transform-style: preserve-3d;
-  transform: translateZ(-1px) scale(2);
-}
-
-.headerBackground {
-  background-image: url('/images/header-bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .headerHero {
@@ -40,11 +35,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
   gap: 16px;
 }
 
@@ -190,8 +180,9 @@
 .bodySection {
   position: relative;
   min-height: 100vh;
-  color: #fff;
-  background: rgb(48,74,96,1);
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
 }
 
 /* Animate Arrow Down */

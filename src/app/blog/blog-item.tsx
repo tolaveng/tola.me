@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from './blog-item.module.css'
 import { htmlDecode } from '@/utils/html';
 import { dateFormt } from '@/utils/utils';
-import Spinner from '../components/spinner';
 import ImageHolder from '../components/image-holder';
 
 export default function PostItem ({ post, index } : {post: Post, index: number}) {

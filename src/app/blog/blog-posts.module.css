@@ -1,0 +1,13 @@
+.blogPostContainer {
+  min-height: 100vh;
+  color: #fff;
+  margin: 0;
+  background: var(--backgroundColor);
+}
+
+.blogPostLoadMore {
+  display: flex;
+  justify-content: center;
+  padding: 32px;
+  background: linear-gradient(200deg, rgb(127,157,181) 0%, rgb(48,74,96,1) 100%);
+}

@@ -3,8 +3,8 @@ import styles from "./page.module.css";
 import HeaderHero from "./components/header-hero";
 import { Playpen_Sans } from 'next/font/google'
 import BlogPosts from "./blog/blog-posts";
-import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { PageFooter } from "./components/page-footer";
 
 const titleFont = Playpen_Sans({ weight: '400', subsets: ['latin'], display: 'swap' })
 
@@ -29,6 +29,7 @@ export default function HomePage() {
       rootMargin: "-100px",
       threshold: 0,
     });
+
     if (bodyRef.current) {
       observer.observe(bodyRef.current);
     }
@@ -37,15 +38,29 @@ export default function HomePage() {
   }, []);
 
   return (
+    <>
     <main className={styles.homeContainer}>
-      <div className={styles.headerContainer}>
-        <div className={styles.headerBackground}>
-        </div>
-
+      <div className={styles.headerContainerFixed}>
         <div className={styles.headerHero}>
           <HeaderHero />
         </div>
 
+        <div className={styles.headerIcons}>
+          <span className={`${styles.headerIcon} ${styles.iconAndroid}`} />
+          <span className={`${styles.headerIcon} ${styles.iconAws}`} />
+          <span className={`${styles.headerIcon} ${styles.iconAzure}`} />
+          <span className={`${styles.headerIcon} ${styles.iconBlazor}`} />
+          <span className={`${styles.headerIcon} ${styles.iconCSharp}`} />
+          <span className={`${styles.headerIcon} ${styles.iconGraphql}`} />
+          <span className={`${styles.headerIcon} ${styles.iconMongo}`} />
+          <span className={`${styles.headerIcon} ${styles.iconDotNet}`} />
+          <span className={`${styles.headerIcon} ${styles.iconReact}`} />
+          <span className={`${styles.headerIcon} ${styles.iconSwift}`} />
+          <span className={`${styles.headerIcon} ${styles.iconTypescript}`} />
+        </div>
+      </div>
+
+      <div className={styles.headerContainer}>
         <div className={`${styles.headerProfileSection} ${titleFont.className}`}>
           <div className={styles.headerProfileImage}>
             <img src="/images/profile.jpg" alt="Profile Image" style={{maxHeight: 200, maxWidth: 200}} />
@@ -67,37 +82,21 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </div>
 
-      <div className={styles.headerIcons}>
-        <span className={`${styles.headerIcon} ${styles.iconAndroid}`} />
-        <span className={`${styles.headerIcon} ${styles.iconAws}`} />
-        <span className={`${styles.headerIcon} ${styles.iconAzure}`} />
-        <span className={`${styles.headerIcon} ${styles.iconBlazor}`} />
-        <span className={`${styles.headerIcon} ${styles.iconCSharp}`} />
-        <span className={`${styles.headerIcon} ${styles.iconGraphql}`} />
-        <span className={`${styles.headerIcon} ${styles.iconMongo}`} />
-        <span className={`${styles.headerIcon} ${styles.iconDotNet}`} />
-        <span className={`${styles.headerIcon} ${styles.iconReact}`} />
-        <span className={`${styles.headerIcon} ${styles.iconSwift}`} />
-        <span className={`${styles.headerIcon} ${styles.iconTypescript}`} />
-      </div>
-
-      <div ref={arrowRef} className={styles.animateDownArrow} style={{display: isBodySectionVisible ? 'none': 'flex'}} >
+        <div ref={arrowRef} className={styles.animateDownArrow} style={{display: isBodySectionVisible ? 'none': 'flex'}} >
           <div onClick={scrollToBody}>
             <span></span>
             <span></span>
             <span></span>
           </div>
         </div>
+      </div>
       
       <div ref={bodyRef} className={styles.bodySection}>
         <BlogPosts />
       </div>
-
-      <div>
-        Footer
-      </div>
     </main>
+    <PageFooter />
+    </>
   )
 }
