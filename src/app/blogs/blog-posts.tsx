@@ -2,11 +2,11 @@
 import React, { useMemo } from 'react';
 import styles from './blog-posts.module.css'
 import { useCallback, useEffect, useRef, useState } from "react";
-import { getPosts } from "../actions";
+import { getPosts, getPostsByTag } from "../actions";
 import PostItem from './blog-item';
 import Spinner from '../components/spinner';
 
-export default function BlogPosts () {
+export default function BlogPosts ({ tag }: { tag: string}) {
   const [pageNum, setPageNum] = useState(1);
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
@@ -16,15 +16,17 @@ export default function BlogPosts () {
 
   const fetchData = useCallback(async(pageNo: number) => {
     try {
-      const data = await getPosts(pageNo) as Pagination<Post>;
-      if (data.items) {
+      const data = tag 
+        ? await getPostsByTag(pageNo, tag) as Pagination<Post>
+        : await getPosts(pageNo) as Pagination<Post>;
+      if (data && data.items) {
         setPosts(prev => [...prev.concat(data.items)])
+        setHasNext(data.hasNext);
       }
-      setHasNext(data.hasNext);
     } catch (ex) {
       console.log('error', ex);
     }
-  }, []);
+  }, [tag]);
 
 
   useEffect(() => {
@@ -66,6 +68,11 @@ export default function BlogPosts () {
 
   return (
     <div className={styles.blogPostContainer}>
+      { !loading && postItems && postItems.length == 0 && (
+        <div className='p-8'>
+          Hmm! There is no data found here. <a href='/' className='underline underline-offset-2'>Visit Home Page</a>
+        </div>
+      )}
       { postItems }
       { loading && <div className={styles.blogPostLoadMore}>
         <Spinner text='Loading...'/> </div>

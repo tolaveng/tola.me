@@ -2,7 +2,7 @@
 import styles from "./page.module.css";
 import HeaderHero from "./components/header-hero";
 import { Playpen_Sans } from 'next/font/google'
-import BlogPosts from "./blog/blog-posts";
+import BlogPosts from "./blogs/blog-posts";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { PageFooter } from "./components/page-footer";
 
