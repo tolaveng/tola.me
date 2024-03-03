@@ -8,6 +8,9 @@
 :root {
   box-sizing: border-box;
   --backgroundColor: rgb(48,74,96,1);
+  --linearBackground: linear-gradient(150deg, rgb(48,74,96,1) 0%, rgb(127,157,181) 100%);
+  --linearBackgroundReversed: linear-gradient(200deg, rgb(127,157,181) 0%, rgb(48,74,96,1) 100%);
+  --linearBackgroundCenter: linear-gradient(200deg, rgb(48,74,96,1) 0%, rgb(127,157,181) 50%, rgb(48,74,96,1) 100%); 
 }
 
 @media (prefers-color-scheme: dark) {

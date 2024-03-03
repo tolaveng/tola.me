@@ -67,10 +67,12 @@ export default function BlogPosts () {
   return (
     <div className={styles.blogPostContainer}>
       { postItems }
+      { loading && <div className={styles.blogPostLoadMore}>
+        <Spinner text='Loading...'/> </div>
+      }
       {hasNext && <div ref={loadMoreRef} className={styles.blogPostLoadMore} >
-        { loading && <Spinner text='Loading...'/> }
         { !loading && (
-          <button onClick={loadMore} className='border-white border-2 rounded-full p-2 px-6 drop-shadow'>
+          <button onClick={loadMore} className='border-white hover:bg-cyan-700 border-2 rounded-full p-2 px-6 drop-shadow'>
             Load More
           </button>
         )}

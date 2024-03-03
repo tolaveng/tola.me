@@ -1,12 +1,12 @@
 .blogItemContainer {
   min-height: 25vh;
   position: relative;
-  background: linear-gradient(150deg, rgb(48,74,96,1) 0%, rgb(127,157,181) 100%);
+  background: var(--linearBackground);
   padding: 24px;
 }
 
 .blogItemContainerReversed {
-  background: linear-gradient(200deg, rgb(127,157,181) 0%, rgb(48,74,96,1) 100%);
+  background: var(--linearBackgroundReversed);
 }
 
 .blogItemTitle {

@@ -1,3 +1,15 @@
+.mainContainer {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.bodySection {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1000;
+}
+
 .blogPostContainer {
   min-height: 100vh;
   color: #fff;
@@ -9,5 +21,5 @@
   display: flex;
   justify-content: center;
   padding: 32px;
-  background: linear-gradient(200deg, rgb(127,157,181) 0%, rgb(48,74,96,1) 100%);
+  background: var(--linearBackground);
 }

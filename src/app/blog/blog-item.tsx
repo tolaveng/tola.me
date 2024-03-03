@@ -3,6 +3,7 @@ import styles from './blog-item.module.css'
 import { htmlDecode } from '@/utils/html';
 import { dateFormt } from '@/utils/utils';
 import ImageHolder from '../components/image-holder';
+import Tag from '../components/tag';
 
 export default function PostItem ({ post, index } : {post: Post, index: number}) {
   const blogSectionRef = useRef<HTMLDivElement>(null);
@@ -70,9 +71,13 @@ export default function PostItem ({ post, index } : {post: Post, index: number})
           </div>
         </div>
       </div>
-
-      <div className='text-right italic'>
-        published: {dateFormt(post.publishedDateTime)}
+      <div className='flex flex-row'>
+        <div className='basis-1/2 ps-8'>
+          {post.tags && post.tags.map((t, i) => <Tag key={i} text={t}/>)}
+        </div>
+        <div className='basis-1/2 text-right italic'>
+          published: {dateFormt(post.publishedDateTime)}
+        </div>
       </div>
     </div>
   )
