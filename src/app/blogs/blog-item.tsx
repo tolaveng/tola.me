@@ -48,7 +48,7 @@ export default function PostItem ({ post, index } : {post: Post, index: number})
       </div>
       <div className={styles.blogItemSection} ref={blogSectionRef}>
         {post.featureImageUrl && (
-          <div className={styles.blogItemSectionLeft}>
+          <div className={styles.blogItemSectionCol}>
             {// lazy load image when blog visible
             isBlogVisible && (
               <div className={styles.blogItemImageContainer}>
@@ -59,7 +59,7 @@ export default function PostItem ({ post, index } : {post: Post, index: number})
           </div>
         )}
 
-        <div className={styles.blogItemSectionLeft}>
+        <div className={styles.blogItemSectionCol}>
           <div className={`${styles.blogItemContent} ${isBlogVisible ? styles.slideIn : ''}`}>
             <div>
               { htmlDecode(post.summary)}

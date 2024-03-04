@@ -6,7 +6,7 @@ import { getPosts, getPostsByTag } from "../actions";
 import PostItem from './blog-item';
 import Spinner from '../components/spinner';
 
-export default function BlogPosts ({ tag }: { tag: string}) {
+export default function BlogPosts ({ tag }: { tag?: string}) {
   const [pageNum, setPageNum] = useState(1);
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);

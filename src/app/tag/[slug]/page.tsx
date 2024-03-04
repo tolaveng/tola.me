@@ -5,12 +5,18 @@ import BlogPosts from '@/app/blogs/blog-posts';
 import { PageFooter } from '@/app/components/page-footer';
 import PageHeader from '@/app/components/page-header';
 import { usePathname } from 'next/navigation';
+import Breadcrumb, { BreadcrumbPath } from '@/app/components/breadcrumb';
 
 interface props {
   params: {
     slug: string;
   }
 }
+
+const breadcrumbs: BreadcrumbPath[] = [
+  { name: 'Blogs', link: '/blogs' },
+  { name: 'Tag' },
+];
 
 const BlogTag = ({ params }: props) => {
   const pathname = usePathname()
@@ -22,6 +28,7 @@ const BlogTag = ({ params }: props) => {
     <main className={styles.mainContainer}>
       <PageHeader />
       <div className={styles.bodySection}>
+        <Breadcrumb paths={breadcrumbs} />
         <BlogPosts tag={tag} />
       </div>
       <PageFooter />

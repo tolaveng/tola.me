@@ -7,6 +7,9 @@
 
 :root {
   box-sizing: border-box;
+
+  --linkColor: #0000ff;
+
   --backgroundColor: rgb(48,74,96,1);
   --linearBackground: linear-gradient(150deg, rgb(48,74,96,1) 0%, rgb(127,157,181) 100%);
   --linearBackgroundReversed: linear-gradient(200deg, rgb(127,157,181) 0%, rgb(48,74,96,1) 100%);
@@ -26,6 +29,7 @@
 
 html,
 body {
+  background: var(--backgroundColor);
 }
 
 a {
