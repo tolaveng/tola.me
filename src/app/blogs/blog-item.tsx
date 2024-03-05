@@ -66,7 +66,7 @@ export default function PostItem ({ post, index } : {post: Post, index: number})
             </div>
 
             { post.content && post.content.trim() !== "" && (
-              <button type='button'>read more...</button>
+              <span>👉 <a href={`/blog/${post.path}`} className='underline underline-offset-2'>Find Out More</a></span>
             )}
           </div>
         </div>

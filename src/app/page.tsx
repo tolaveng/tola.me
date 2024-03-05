@@ -86,7 +86,7 @@ export default function HomePage() {
         </div>
 
         <div className={styles.headerProfileSubTitle}>
-          have a look at my hobbies 👨‍💻
+        💻 have a look at my hobbies 👨‍💻
         </div>
 
         <div ref={arrowRef} className={styles.animateDownArrow} >
