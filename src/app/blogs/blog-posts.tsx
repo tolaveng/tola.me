@@ -68,6 +68,8 @@ export default function BlogPosts ({ tag }: { tag?: string}) {
 
   return (
     <div className={styles.blogPostContainer}>
+      <div className='p-2'></div>
+
       { !loading && postItems && postItems.length == 0 && (
         <div className='p-8'>
           Hmm! There is no data found here. <a href='/' className='underline underline-offset-2'>Visit Home Page</a>
@@ -85,6 +87,8 @@ export default function BlogPosts ({ tag }: { tag?: string}) {
         )}
         </div>
       }
+      
+      <div className='p-2'></div>
     </div>
   );
 };

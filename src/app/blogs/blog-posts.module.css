@@ -13,13 +13,13 @@
 .blogPostContainer {
   min-height: 100vh;
   color: #fff;
-  margin: 0;
   background: var(--backgroundColor);
+  margin: 0;
 }
 
 .blogPostLoadMore {
   display: flex;
   justify-content: center;
   padding: 32px;
-  background: var(--linearBackground);
+  
 }
