@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import styles from './blog-item.module.css'
+import styles from './post-item.module.css'
 import { htmlDecode } from '@/utils/html';
 import { dateFormt } from '@/utils/utils';
 import ImageHolder from '../components/image-holder';
@@ -66,7 +66,7 @@ export default function PostItem ({ post, index } : {post: Post, index: number})
             </div>
 
             { post.content && post.content.trim() !== "" && (
-              <span>👉 <a href={`/blog/${post.path}`} className='underline underline-offset-2'>Find Out More</a></span>
+              <span>👉 <a href={`/posts/${post.path}`} className='underline underline-offset-2'>Find Out More</a></span>
             )}
           </div>
         </div>

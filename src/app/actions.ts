@@ -21,3 +21,14 @@ export const getPostsByTag = async(pageNo: number, tag: string) => {
 
   return res.json();
 };
+
+export const getPostByPath = async(path: string) => {
+  const getPostsUrl = `${process.env.API_BASE_URL}posts/${path}`;
+  const res = await fetch(getPostsUrl);
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data from server');
+  }
+
+  return res.json();
+}

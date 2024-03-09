@@ -1,9 +1,9 @@
 'use client'
 import React, { useMemo } from 'react';
-import styles from './blog-posts.module.css'
+import styles from './posts.module.css'
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getPosts, getPostsByTag } from "../actions";
-import PostItem from './blog-item';
+import PostItem from './post-item';
 import Spinner from '../components/spinner';
 
 export default function BlogPosts ({ tag }: { tag?: string}) {

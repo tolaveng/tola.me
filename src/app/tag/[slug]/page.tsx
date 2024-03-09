@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import styles from "./page.module.css";
-import BlogPosts from '@/app/blogs/blog-posts';
+import BlogPosts from '@/app/posts/posts';
 import { PageFooter } from '@/app/components/page-footer';
 import PageHeader from '@/app/components/page-header';
 import { usePathname } from 'next/navigation';
@@ -14,7 +14,7 @@ interface props {
 }
 
 const breadcrumbs: BreadcrumbPath[] = [
-  { name: 'Blogs', link: '/blogs' },
+  { name: 'Posts', link: '/posts' },
   { name: 'Tag' },
 ];
 
