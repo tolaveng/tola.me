@@ -1,0 +1,24 @@
+.mainContainer {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.bodySection {
+  color: #fff;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1000;
+}
+
+.postContainer {
+  padding: 24px;
+}
+
+.postTitle {
+  
+}
+
+.postContent {
+  
+}

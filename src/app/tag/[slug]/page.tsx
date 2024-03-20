@@ -4,7 +4,6 @@ import styles from "./page.module.css";
 import BlogPosts from '@/app/posts/posts';
 import { PageFooter } from '@/app/components/page-footer';
 import PageHeader from '@/app/components/page-header';
-import { usePathname } from 'next/navigation';
 import Breadcrumb, { BreadcrumbPath } from '@/app/components/breadcrumb';
 
 interface props {
@@ -19,7 +18,6 @@ const breadcrumbs: BreadcrumbPath[] = [
 ];
 
 const BlogTag = ({ params }: props) => {
-  const pathname = usePathname()
   if (!params || !params.slug) return null;
 
   const tag = params.slug.trim().toLowerCase();

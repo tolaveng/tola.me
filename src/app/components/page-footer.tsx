@@ -27,7 +27,7 @@ export function PageFooter() {
     <>
       {/* to reveal the footer below */}
       <div ref={footerRef} style={{height: '200px', pointerEvents: 'none'}}></div>
-      <div className={styles.footerFix} style={{display: visible ? 'block' : 'none'}}>
+      <div className={styles.footerFix} style={{opacity: visible ? '1' : '0'}}>
         <div className='flex flex-col lg:flex-row justify-center items-center gap-5 h-full
          divide-y-2 divide-slate-500 lg:divide-x-2 lg:divide-y-0'>
           <div className='p-6'>
