@@ -4,7 +4,9 @@
   left: 0;
   right: 0;
   height: 200px;
-  background-color: var(--backgroundColor);
+  color: #ffffff;
+  background: var(--backgroundColor);
+  background-color: #304a60;
   transition: opacity 1s;
   opacity: 1;
 }

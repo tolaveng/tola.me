@@ -22,10 +22,7 @@ export default function PostItem ({ post, index } : {post: Post, index: number})
     return () => observer.disconnect();
   }, [isBlogVisible])
   
-  let className = styles.blogItemContainer;
-  if (index % 2 != 0) {
-    className += " " + styles.blogItemContainerReversed;
-  }
+  let className = `${styles.blogItemContainer} timeline-item`;
 
   // image effect
   let imgClassName = styles.blogItemImage;
@@ -43,10 +40,25 @@ export default function PostItem ({ post, index } : {post: Post, index: number})
   
   return (
     <div className={className}>
-      <div className={styles.blogItemTitle}>
+      <div className='timeline-item-dot' />
+      <div className={`${styles.blogItemTitle}`}>
         <span>{post.title}</span>
       </div>
+      <div className='basis-1/2 ps-8'>
+          {post.tags && post.tags.map((t, i) => <Tag key={i} text={t}/>)}
+      </div>
       <div className={styles.blogItemSection} ref={blogSectionRef}>
+        <div className={styles.blogItemSectionCol}>
+          <div className={`${styles.blogItemContent} ${isBlogVisible ? styles.slideIn : ''}`}>
+            <div>
+              { htmlDecode(post.summary)}
+            </div>
+
+            { post.content && post.content.trim() !== "" && (
+              <span>👉 <a href={`/posts/${post.path}`} className='underline underline-offset-2'>More Details</a></span>
+            )}
+          </div>
+        </div>
         {post.featureImageUrl && (
           <div className={styles.blogItemSectionCol}>
             {// lazy load image when blog visible
@@ -58,26 +70,9 @@ export default function PostItem ({ post, index } : {post: Post, index: number})
             )}
           </div>
         )}
-
-        <div className={styles.blogItemSectionCol}>
-          <div className={`${styles.blogItemContent} ${isBlogVisible ? styles.slideIn : ''}`}>
-            <div>
-              { htmlDecode(post.summary)}
-            </div>
-
-            { post.content && post.content.trim() !== "" && (
-              <span>👉 <a href={`/posts/${post.path}`} className='underline underline-offset-2'>Find Out More</a></span>
-            )}
-          </div>
-        </div>
       </div>
-      <div className='flex flex-row'>
-        <div className='basis-1/2 ps-8'>
-          {post.tags && post.tags.map((t, i) => <Tag key={i} text={t}/>)}
-        </div>
-        <div className='basis-1/2 text-right italic'>
-          published: {dateFormt(post.publishedDateTime)}
-        </div>
+      <div className='text-right italic'>
+          wrote on {dateFormt(post.publishedDateTime)}
       </div>
     </div>
   )

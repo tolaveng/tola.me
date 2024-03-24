@@ -1,28 +1,22 @@
 .blogItemContainer {
   min-height: 25vh;
   position: relative;
-  background: var(--linearBackground);
-  border: 0;
-  border-radius: 4px;
-  box-shadow: 0px 1px 2px var(--boxShadowColor);
-  padding: 24px;
-  margin: 24px;
-  overflow-x: hidden;
-}
-
-.blogItemContainerReversed {
-  background: var(--linearBackgroundReversed);
 }
 
 .blogItemTitle {
   font-size: 24px;
   font-weight: 600;
+  padding-left: 24px;
   margin-bottom: 16px;
 }
 
 .blogItemSection {
   display: flex;
   flex-direction: column;
+}
+
+.blogItemSectionCol {
+  padding: 24px;
 }
 
 .blogItemImageContainer {
@@ -62,7 +56,8 @@
 }
 
 .blogItemTitle {
-  box-shadow: 0 4px 4px -6px #cccccc;
+  color: var(--titleColor);
+  box-shadow: 0 4px 4px -6px #1a1a1a;
 }
 
 .slideIn {
@@ -80,10 +75,7 @@
     flex-basis: 0;
     flex-grow: 1;
     min-width: 0;
-    padding: 24px;
   }
 
-  .blogItemTitle {
-    margin-left: 24px;
-  }
+
 }

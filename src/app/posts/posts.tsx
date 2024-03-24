@@ -70,12 +70,17 @@ export default function BlogPosts ({ tag }: { tag?: string}) {
     <div className={styles.blogPostContainer}>
       <div className='p-2'></div>
 
-      { !loading && postItems && postItems.length == 0 && (
+      { !loading && !!postItems && postItems.length == 0 && (
         <div className='p-8'>
-          Hmm! There is no data found here. <a href='/' className='underline underline-offset-2'>Visit Home Page</a>
+          Hmm! Something went wrong. <a href='/' className='underline underline-offset-2'>Visit Home Page</a>
         </div>
       )}
-      { postItems }
+      { !!postItems && postItems.length > 0 && (<div className='timeline'>
+        {postItems}
+        <div className='timeline-item'>
+          <div className='timeline-item-dot' />
+        </div>
+      </div>) }
       { loading && <div className={styles.blogPostLoadMore}>
         <Spinner text='Loading...'/> </div>
       }

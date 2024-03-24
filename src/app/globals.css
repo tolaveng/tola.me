@@ -10,6 +10,8 @@
 
   --linkColor: #2020dd;
   --boxShadowColor: rgb(127,157,181);
+  --lineColor: rgb(48,74,96,1);
+  --titleColor: rgb(48,74,96,1);
   --backgroundColor: rgb(48,74,96,1);
   --linearBackground: linear-gradient(150deg, rgb(48,74,96,1) 0%, rgb(127,157,181) 100%);
   --linearBackgroundReversed: linear-gradient(200deg, rgb(127,157,181) 0%, rgb(48,74,96,1) 100%);
@@ -24,11 +26,60 @@
 
 html,
 body {
-  background: var(--backgroundColor);
+  background: #ffffff;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.timeline {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 100%;
+  border: none;
+  background: var(--linearBackgroundCenter);
+  position: absolute;
+  top: 4px;
+  bottom: 0;
+}
+
+.timeline-item-dot {
+  box-sizing: border-box;
+  display: block;
+  width: 28px;
+  height: 28px;
+  border: 4px solid var(--lineColor);
+  border-radius: 50%;
+  background: #ffffff;
+  position: absolute;
+  top: 4px;
+  left: -12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-item-dot::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 50%;
+  background: var(--linearBackgroundReversed);
 }
 

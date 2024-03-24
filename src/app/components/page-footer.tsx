@@ -31,10 +31,10 @@ export function PageFooter() {
         <div className='flex flex-col lg:flex-row justify-center items-center gap-5 h-full
          divide-y-2 divide-slate-500 lg:divide-x-2 lg:divide-y-0'>
           <div className='p-6'>
-            <div className='text-center text-white text-l'>I hope you find somethings interesting here </div>
+            <div className='text-center text-l'>I hope you find somethings interesting here </div>
           </div>
           <div className='p-6'>
-              <div className='text-center text-white text-3xl'>Thank You for visiting</div>
+              <div className='text-center text-3xl'>Thank You for visiting</div>
           </div>
         </div>
       </div>
