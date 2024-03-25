@@ -1,5 +1,5 @@
 'use client'
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import styles from "./page.module.css";
 import Breadcrumb, { BreadcrumbPath } from '@/app/components/breadcrumb';
 import PageHeader from '@/app/components/page-header';
@@ -15,12 +15,13 @@ const breadcrumbs: BreadcrumbPath[] = [
 export default function PostPage({ params }: { params: { slug: string } }) {
   const path = params && params.slug && params.slug.trim().toLowerCase();
 
-  const breadCrumbs = useRef([...breadcrumbs, { name: path }]);
+  const [breadCrumbs, setBreadCrumbs] = useState(breadcrumbs);
   const [post, setPost] = useState<Post>();
 
   const fetchData = useCallback(async () => {
     const aPost = await getPostByPath(path) as Post;
     setPost(aPost);
+    setBreadCrumbs(prev => [...prev, { name: aPost.title }]);
   }, [path]);
 
   useEffect(() => { fetchData() }, [fetchData])
@@ -42,7 +43,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
     <main className={styles.mainContainer}>
       <PageHeader />
       <div className={styles.bodySection}>
-        <Breadcrumb paths={breadCrumbs.current} />
+        <Breadcrumb paths={breadCrumbs} />
         <div>
           {!post && <div className='flex justify-center m-8'>
             <Spinner text='Loading...'/>
