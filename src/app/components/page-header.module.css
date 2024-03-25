@@ -1,6 +1,7 @@
 .pageHeaderContainer {
   width: 100%;
   background-color: var(--backgroundColor);
+  background: var(--linearBackgroundReversed);
   color: #fff;
   height: 100px;
   padding: 0 48px;
@@ -39,6 +40,10 @@
 .pageHeaderIcons {
   margin-left: auto;
   display: none;
+}
+
+.pageHeaderIcon {
+  transform: scale(0.8);
 }
 
 @media only screen and (min-width: 1000px) {

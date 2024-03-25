@@ -42,7 +42,8 @@ export default function PostItem ({ post, index } : {post: Post, index: number})
     <div className={className}>
       <div className='timeline-item-dot' />
       <div className={`${styles.blogItemTitle}`}>
-        <span>{post.title}</span>
+        <div className='text-2xl'>{post.title}</div>
+        <div className='text-sm'>{dateFormt(post.publishedDateTime)}</div>
       </div>
       <div className='basis-1/2 ps-8'>
           {post.tags && post.tags.map((t, i) => <Tag key={i} text={t}/>)}
@@ -71,9 +72,7 @@ export default function PostItem ({ post, index } : {post: Post, index: number})
           </div>
         )}
       </div>
-      <div className='text-right italic'>
-          wrote on {dateFormt(post.publishedDateTime)}
-      </div>
+      <div className='py-4'></div>
     </div>
   )
 }

@@ -8,7 +8,7 @@
   border: none;
   border-radius: 4px;
   box-shadow: 0px 1px 2px var(--boxShadowColor);
-  background: var(--linearBackgroundReversed);
+  background: var(--linearBackground);
   display: block;
   list-style: none;
   margin: 32px 24px 0px 24px;

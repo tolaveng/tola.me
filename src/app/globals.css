@@ -83,3 +83,58 @@ a {
   background: var(--linearBackgroundReversed);
 }
 
+.logo-icon {
+  background: url('/icons/logo-icons.png') no-repeat;
+  background-size: cover;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+}
+
+.logo-icon.icon-android {
+  background-position: 0px 0px;
+}
+
+.logo-icon.icon-aws {
+  background-position: -48px 0px;
+}
+
+.logo-icon.icon-azure {
+  background-position: -96px 0px;
+}
+
+.logo-icon.icon-blazor {
+  background-position: -144px 0px;
+}
+
+.logo-icon.icon-csharp {
+  background-position: -192px 0px;
+}
+
+.logo-icon.icon-graphql {
+  background-position: -240px 0px;
+}
+
+.logo-icon.icon-mongo {
+  background-position: -288px 0px;
+}
+
+.logo-icon.icon-dotnet {
+  background-position: -336px 0px;
+}
+
+.logo-icon.icon-react {
+  background-position: -384px 0px;
+}
+
+.logo-icon.icon-kotlin {
+  background-position: -432px 0px;
+}
+
+.logo-icon.icon-typescript {
+  background-position: -480px 0px;
+}
+
+.logo-icon.icon-java {
+  background-position: -528px 0px;
+}

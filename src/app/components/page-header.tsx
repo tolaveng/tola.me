@@ -17,7 +17,18 @@ const PageHeader = () => {
           Full-stack developer
         </div>
         <div className={styles.pageHeaderIcons}>
-          <Image src={'/icons/logo-icons.png'} width={400} height={1} alt='' />
+          <span className={`logo-icon icon-android ${styles.pageHeaderIcon}`} />
+          <span className={`logo-icon icon-aws ${styles.pageHeaderIcon}`} />
+          <span className={`logo-icon icon-azure ${styles.pageHeaderIcon}`} />
+          <span className={`logo-icon icon-blazor ${styles.pageHeaderIcon}`} />
+          <span className={`logo-icon icon-csharp ${styles.pageHeaderIcon}`} />
+          <span className={`logo-icon icon-graphql ${styles.pageHeaderIcon}`} />
+          <span className={`logo-icon icon-mongo ${styles.pageHeaderIcon}`} />
+          <span className={`logo-icon icon-dotnet ${styles.pageHeaderIcon}`} />
+          <span className={`logo-icon icon-react ${styles.pageHeaderIcon}`} />
+          <span className={`logo-icon icon-kotlin ${styles.pageHeaderIcon}`} />
+          <span className={`logo-icon icon-typescript ${styles.pageHeaderIcon}`} />
+          <span className={`logo-icon icon-java ${styles.pageHeaderIcon}`} />
         </div>
       </div>
     </div>

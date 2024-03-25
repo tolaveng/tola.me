@@ -50,106 +50,108 @@
   z-index: 1;
 }
 
-.headerIcon {
-  background: url('/icons/logo-icons.png') no-repeat;
-  background-size: cover;
-  display: block;
-  width: 48px;
-  height: 48px;
+.iconAndroid {
   position: absolute;
   opacity: 0.5;
-}
-
-.headerIcon.iconAndroid {
-  background-position: 0px 0px;
   top: 50%;
   left: 10%;
   transform: translatey(-10px);
   animation: iconFloating3 10s ease-in-out infinite;
 }
 
-.headerIcon.iconAws {
-  background-position: -48px 0px;
+.iconAws {
+  position: absolute;
+  opacity: 0.5;
   top: 70%;
   left: 85%;
   transform: translatey(-10px);
   animation: iconFloating2 15s ease-in-out infinite;
 }
 
-.headerIcon.iconAzure {
-  background-position: -96px 0px;
+.iconAzure {
+  position: absolute;
+  opacity: 0.5;
   top: 70%;
   left: 20%;
   transform: translatey(-10px);
   animation: iconFloating3 8s ease-in-out infinite;
 }
 
-.headerIcon.iconBlazor {
-  background-position: -144px 0px;
+.iconBlazor {
+  position: absolute;
+  opacity: 0.5;
   top: 12%;
   left: 80%;
   transform: translatey(10px);
   animation: iconFloating1 8s ease-in-out infinite;
 }
 
-.headerIcon.iconCSharp {
-  background-position: -192px 0px;
+.iconCSharp {
+  position: absolute;
+  opacity: 0.5;
   top: 40%;
   left: 80%;
   transform: translatey(-15px);
   animation: iconFloating2 15s ease-in-out infinite;
 }
 
-.headerIcon.iconGraphql {
-  background-position: -240px 0px;
+.iconGraphql {
+  position: absolute;
+  opacity: 0.5;
   top: 10%;
   left: 35%;
   transform: translatey(-15px);
   animation: iconFloating4 15s ease-in-out infinite;
 }
 
-.headerIcon.iconMongo {
-  background-position: -288px 0px;
+.iconMongo {
+  position: absolute;
+  opacity: 0.5;
   top: 65%;
   left: 5%;
   transform: translatey(-15px);
   animation: iconFloating2 15s ease-in-out infinite;
 }
 
-.headerIcon.iconDotNet {
-  background-position: -336px 0px;
+.iconDotNet {
+  position: absolute;
+  opacity: 0.5;
   top: 10%;
   left: 10%;
   transform: translatey(0px);
   animation: iconFloating1 8s ease-in-out infinite;
 }
 
-.headerIcon.iconReact {
-  background-position: -384px 0px;
+.iconReact {
+  position: absolute;
+  opacity: 0.5;
   top: 30%;
   left: 15%;
   transform: translatey(-15px);
   animation: iconFloating2 15s ease-in-out infinite;
 }
 
-.headerIcon.iconKotlin {
-  background-position: -432px 0px;
+.iconKotlin {
+  position: absolute;
+  opacity: 0.5;
   top: 20%;
   left: 70%;
   transform: translatey(-15px);
   animation: iconFloating4 15s ease-in-out infinite;
 }
 
-.headerIcon.iconTypescript {
-  background-position: -480px 0px;
+.iconTypescript {
+  position: absolute;
+  opacity: 0.5;
   top: 60%;
   left: 75%;
   transform: translatey(-10px);
   animation: iconFloating3 10s ease-in-out infinite;
 }
 
-.headerIcon.iconJava {
-  background-position: -528px 0px;
+.iconJava {
+  position: absolute;
+  opacity: 0.5;
   top: 75%;
   left:65%;
   transform: translatey(-5px);

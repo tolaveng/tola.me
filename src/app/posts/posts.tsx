@@ -86,7 +86,7 @@ export default function BlogPosts ({ tag }: { tag?: string}) {
       }
       {hasNext && <div ref={loadMoreRef} className={styles.blogPostLoadMore} >
         { !loading && (
-          <button onClick={loadMore} className='border-white bg-cyan-700 border-2 rounded-full p-2 px-6 drop-shadow hover:bg-cyan-900'>
+          <button onClick={loadMore} className='text-white border-white bg-cyan-700 border-2 rounded-full p-2 px-6 drop-shadow hover:bg-cyan-900'>
             Load More
           </button>
         )}

@@ -46,18 +46,18 @@ export default function HomePage() {
         </div>
 
         <div className={styles.headerIcons}>
-          <span className={`${styles.headerIcon} ${styles.iconAndroid}`} />
-          <span className={`${styles.headerIcon} ${styles.iconAws}`} />
-          <span className={`${styles.headerIcon} ${styles.iconAzure}`} />
-          <span className={`${styles.headerIcon} ${styles.iconBlazor}`} />
-          <span className={`${styles.headerIcon} ${styles.iconCSharp}`} />
-          <span className={`${styles.headerIcon} ${styles.iconGraphql}`} />
-          <span className={`${styles.headerIcon} ${styles.iconMongo}`} />
-          <span className={`${styles.headerIcon} ${styles.iconDotNet}`} />
-          <span className={`${styles.headerIcon} ${styles.iconReact}`} />
-          <span className={`${styles.headerIcon} ${styles.iconKotlin}`} />
-          <span className={`${styles.headerIcon} ${styles.iconTypescript}`} />
-          <span className={`${styles.headerIcon} ${styles.iconJava}`} />
+          <span className={`logo-icon icon-android ${styles.iconAndroid}`} />
+          <span className={`logo-icon icon-aws ${styles.iconAws}`} />
+          <span className={`logo-icon icon-azure ${styles.iconAzure}`} />
+          <span className={`logo-icon icon-blazor ${styles.iconBlazor}`} />
+          <span className={`logo-icon icon-csharp ${styles.iconCSharp}`} />
+          <span className={`logo-icon icon-graphql ${styles.iconGraphql}`} />
+          <span className={`logo-icon icon-mongo ${styles.iconMongo}`} />
+          <span className={`logo-icon icon-dotnet ${styles.iconDotNet}`} />
+          <span className={`logo-icon icon-react ${styles.iconReact}`} />
+          <span className={`logo-icon icon-kotlin ${styles.iconKotlin}`} />
+          <span className={`logo-icon icon-typescript ${styles.iconTypescript}`} />
+          <span className={`logo-icon icon-java ${styles.iconJava}`} />
         </div>
       </div>
 
